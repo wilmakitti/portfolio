@@ -7,11 +7,7 @@ import random as rd
 ingredients_at_home = ["Tomato", "Cream", "Chicken", "Beef", "Bean", "Onion", "Bacon", "Mushroom", "Egg", "Mackarel"]
 menu_order = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
 # list of carbs and a carb randomiser for the final sentence
-type_of_carb = ["pasta", "potatoes", "rice", "noodles", "soup", "omelette"]
-
-def carb_list(type_of_carb):
-    carb_list = rd.choice(type_of_carb)
-    return carb_list
+carb_list = ["pasta", "potatoes", "rice", "noodles", "soup", "omelette"]
 
 # two of the ingredients are user inputs and one is a randomly selected ingredient for the final sentence
 def random_food(ingredients_at_home):
@@ -36,21 +32,19 @@ for j in range(2):
     else:
         print("Invalid choice. Please enter a number between 1 and 10.")
 
-
 # Display the selected ingredients
 print("\nYour choices:")
-# print(", ".join(selected_ingredients))
 
 for ingredient in selected_ingredients:
-    print(ingredient) # to get these two into the final print sentence
+    print(ingredient) 
 
+# Suggested dish based on the selected ingredients by using two user inputs, random carb and a random ingredient
+random_carb = rd.choice(carb_list)
+random_ingredient = rd.choice(ingredients_at_home)
+user_ingredient = rd.choice(selected_ingredients)
 
-# Suggested dish based on the selected ingredients
-random_carb = carb_list(type_of_carb)
-random_ingredient = random_food(ingredients_at_home).lower() 
-
-# selected_ingredients =  
-print(f"So how about {ingredient[0]} {random_carb} with {selected_ingredients[1]} and {random_ingredient}?")
+#   
+print(f"So how about {selected_ingredients[0]} {random_carb} with {selected_ingredients[1]} and {random_ingredient}?")
 
 
 
